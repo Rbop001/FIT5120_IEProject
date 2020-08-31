@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PointsOfInterestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="POI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Census_Year" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Block_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Property_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Base_property_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Street_address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CLUE_small_area" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Trading_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Industry_ANZSIC4_code " Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Industry_ANZSIC4_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Seating_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Number_of_seats  " Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="x_coordinate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="y_coordinate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PointsOfInterestModelStoreContainer">
+          <EntitySet Name="POI" EntityType="Self.POI" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PointsOfInterestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="POI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Census_Year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Block_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Property_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Base_property_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Street_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CLUE_small_area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Trading_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Industry_ANZSIC4_code_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Industry_ANZSIC4_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Seating_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number_of_seats__" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="x_coordinate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="y_coordinate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PointsOfInterestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="POIs" EntityType="Self.POI" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PointsOfInterestModelStoreContainer" CdmEntityContainer="PointsOfInterestEntities">
+          <EntitySetMapping Name="POIs">
+            <EntityTypeMapping TypeName="PointsOfInterestModel.POI">
+              <MappingFragment StoreEntitySet="POI">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Census_Year" ColumnName="Census_Year" />
+                <ScalarProperty Name="Block_ID" ColumnName="Block_ID" />
+                <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+                <ScalarProperty Name="Base_property_ID" ColumnName="Base_property_ID" />
+                <ScalarProperty Name="Street_address" ColumnName="Street_address" />
+                <ScalarProperty Name="CLUE_small_area" ColumnName="CLUE_small_area" />
+                <ScalarProperty Name="Trading_name" ColumnName="Trading_name" />
+                <ScalarProperty Name="Industry_ANZSIC4_code_" ColumnName="Industry_ANZSIC4_code " />
+                <ScalarProperty Name="Industry_ANZSIC4_description" ColumnName="Industry_ANZSIC4_description" />
+                <ScalarProperty Name="Seating_type" ColumnName="Seating_type" />
+                <ScalarProperty Name="Number_of_seats__" ColumnName="Number_of_seats  " />
+                <ScalarProperty Name="x_coordinate" ColumnName="x_coordinate" />
+                <ScalarProperty Name="y_coordinate" ColumnName="y_coordinate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<NavigatingMelbourne.Models.POI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<main id="main">
+    <section id="intro">
+        <div class="container">
+            <img src="~/Content/Images/great-ocean-road-tour.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="intro-info" data-aos="zoom-in" data-aos-delay="100" >
+           <h2>Welcome. Come explore this wonderful city with us. Type in your search category like Cafes and Restaurants, Pubs and Clubs etc below to get information at your fingertips.</h2>
+        </div>
+</section>
+    <section id="about">
+        <div class="container" data-aos="fade-up">
+            <table class="table">
+                <thead>
+                    <tr>
+                       
+                        <th>
+                           Street Address
+                        </th>
+                        <th>
+                           Industry Desc
+                        </th>
+                        <th>
+                           Trading Name
+                        </th>
+                        <th>
+                           Clue Small Area
+                        </th>
+                      
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Street_address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Industry_ANZSIC4_description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trading_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CLUE_small_area)
+                        </td>
+                        <td>
+                            @Html.ActionLink("View on the Map", "Details", new { id = item.Id }) 
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            @section Scripts {
+
+                @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+                @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+
+                <script>
+                    $(document).ready(function () {
+                        $('.table').DataTable();
+                    });
+                </script>
+
+            }
+            <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+                  rel="stylesheet" />
+
+        </div>
+    </section>
+</main>
