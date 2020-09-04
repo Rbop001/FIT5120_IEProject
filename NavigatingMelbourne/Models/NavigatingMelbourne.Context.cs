@@ -26,5 +26,9 @@ namespace NavigatingMelbourne.Models
         }
     
         public virtual DbSet<POI> POIs { get; set; }
+        public virtual DbSet<Supermarket> Supermarkets { get; set; }
+        public virtual DbSet<ArtGalleryMuseum> ArtGalleryMuseums { get; set; }
+        public virtual DbSet<ChineseRestaurant> ChineseRestaurants { get; set; }
+        public virtual DbSet<PlacesOfWorship> PlacesOfWorships { get; set; }
     }
 }

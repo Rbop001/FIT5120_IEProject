@@ -1,0 +1,74 @@
+﻿@model IEnumerable<NavigatingMelbourne.Models.Supermarket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<main id="main">
+    <section id="about">
+        <div class="container" data-aos="fade-up">
+            <h5>List of the supermarkets in melbourne city</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Street Address
+                        </th>
+                        <th>
+                            Industry Desc
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Area
+                        </th>
+
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Idesc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Area)
+                            </td>
+                            <td>
+                                @Html.ActionLink("View on the Map", "Details", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @section Scripts {
+
+                @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+                @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+
+                <script>
+                    $(document).ready(function () {
+                        $('.table').DataTable();
+                    });
+                </script>
+
+            }
+            <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+                  rel="stylesheet" />
+
+        </div>
+    </section>
+</main>

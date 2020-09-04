@@ -1,0 +1,136 @@
+﻿@model NavigatingMelbourne.Models.ChineseRestaurant
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ChineseRestaurant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Block)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Block)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prop_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prop_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bp_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bp_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.St_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.St_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Small_Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Small_Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurant_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restaurant_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ind_code_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ind_code_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ind_desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ind_desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seating_Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seating_Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_Seats__)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_Seats__)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.x_coord)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.x_coord)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.y_coord)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.y_coord)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

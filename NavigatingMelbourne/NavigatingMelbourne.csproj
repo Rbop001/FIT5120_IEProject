@@ -128,10 +128,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArtGalleryMuseumsController.cs" />
+    <Compile Include="Controllers\ChineseRestaurantsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlacesOfWorshipsController.cs" />
     <Compile Include="Controllers\POIsController.cs" />
+    <Compile Include="Controllers\SupermarketsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArtGalleryMuseum.cs">
+      <DependentUpon>NavigatingMelbourne.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChineseRestaurant.cs">
+      <DependentUpon>NavigatingMelbourne.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NavigatingMelbourne.Context.cs">
       <AutoGen>True</AutoGen>
@@ -148,7 +158,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NavigatingMelbourne.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PlacesOfWorship.cs">
+      <DependentUpon>NavigatingMelbourne.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\POI.cs">
+      <DependentUpon>NavigatingMelbourne.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supermarket.cs">
       <DependentUpon>NavigatingMelbourne.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -398,53 +414,18 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\Images\Chinese_Restaurants.jpg" />
     <Content Include="Content\Images\Discover_Melbourne.jpg" />
     <Content Include="Content\Images\great-ocean-road-tour.jpg" />
+    <Content Include="Content\Images\Museums.jpg" />
+    <Content Include="Content\Images\PlaceOfWorship.jpg" />
+    <Content Include="Content\Images\Supermarkets.jpg" />
     <Content Include="Content\Images\Team_Logo.jpeg" />
     <Content Include="Content\Style.css" />
-    <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="img\about-extra-1.svg" />
-    <Content Include="img\about-extra-2.svg" />
-    <Content Include="img\about-img.svg" />
-    <Content Include="img\apple-touch-icon.png" />
-    <Content Include="img\clients\client-1.png" />
-    <Content Include="img\clients\client-2.png" />
-    <Content Include="img\clients\client-3.png" />
-    <Content Include="img\clients\client-4.png" />
-    <Content Include="img\clients\client-5.png" />
-    <Content Include="img\clients\client-6.png" />
-    <Content Include="img\clients\client-7.png" />
-    <Content Include="img\clients\client-8.png" />
-    <Content Include="img\favicon.png" />
-    <Content Include="img\intro-bg.png" />
-    <Content Include="img\intro-img.svg" />
-    <Content Include="img\logo.png" />
-    <Content Include="img\portfolio\app1.jpg" />
-    <Content Include="img\portfolio\app2.jpg" />
-    <Content Include="img\portfolio\app3.jpg" />
-    <Content Include="img\portfolio\card1.jpg" />
-    <Content Include="img\portfolio\card2.jpg" />
-    <Content Include="img\portfolio\card3.jpg" />
-    <Content Include="img\portfolio\portfolio-details-1.jpg" />
-    <Content Include="img\portfolio\portfolio-details-2.jpg" />
-    <Content Include="img\portfolio\portfolio-details-3.jpg" />
-    <Content Include="img\portfolio\web1.jpg" />
-    <Content Include="img\portfolio\web2.jpg" />
-    <Content Include="img\portfolio\web3.jpg" />
-    <Content Include="img\team-1.jpg" />
-    <Content Include="img\team-2.jpg" />
-    <Content Include="img\team-3.jpg" />
-    <Content Include="img\team-4.jpg" />
-    <Content Include="img\testimonial-1.jpg" />
-    <Content Include="img\testimonial-2.jpg" />
-    <Content Include="img\testimonial-3.jpg" />
-    <Content Include="img\testimonial-4.jpg" />
-    <Content Include="img\testimonial-5.jpg" />
-    <Content Include="js\main.js" />
     <Content Include="Models\NavigatingMelbourne.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>NavigatingMelbourne.edmx</DependentUpon>
@@ -467,8 +448,6 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
-    <Content Include="img\header-bg.psd" />
-    <Content Include="img\logo.psd" />
     <Content Include="assets\img\header-bg.psd" />
     <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
@@ -493,6 +472,7 @@
     <Content Include="assets\vendor\owl.carousel\LICENSE" />
     <Content Include="assets\vendor\owl.carousel\README.md" />
     <None Include="Properties\PublishProfiles\amazingexperiences - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\exploremelbournecity - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\NavigatingMelbourne20200901074655 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
@@ -581,46 +561,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="vendor\aos\aos.css" />
-    <Content Include="vendor\aos\aos.js" />
-    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
-    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
-    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
-    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
-    <Content Include="vendor\bootstrap\css\bootstrap.css" />
-    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
-    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
-    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="vendor\bootstrap\js\bootstrap.js" />
-    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
-    <Content Include="vendor\counterup\counterup.min.js" />
-    <Content Include="vendor\font-awesome\css\font-awesome.css" />
-    <Content Include="vendor\font-awesome\css\font-awesome.min.css" />
-    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="vendor\ionicons\css\ionicons.css" />
-    <Content Include="vendor\ionicons\css\ionicons.min.css" />
-    <Content Include="vendor\ionicons\fonts\ionicons.svg" />
-    <Content Include="vendor\isotope-layout\isotope.pkgd.js" />
-    <Content Include="vendor\isotope-layout\isotope.pkgd.min.js" />
-    <Content Include="vendor\jquery.easing\jquery.easing.min.js" />
-    <Content Include="vendor\jquery\jquery.min.js" />
-    <Content Include="vendor\owl.carousel\assets\ajax-loader.gif" />
-    <Content Include="vendor\owl.carousel\assets\owl.carousel.css" />
-    <Content Include="vendor\owl.carousel\assets\owl.carousel.min.css" />
-    <Content Include="vendor\owl.carousel\assets\owl.theme.default.css" />
-    <Content Include="vendor\owl.carousel\assets\owl.theme.default.min.css" />
-    <Content Include="vendor\owl.carousel\assets\owl.theme.green.css" />
-    <Content Include="vendor\owl.carousel\assets\owl.theme.green.min.css" />
-    <Content Include="vendor\owl.carousel\assets\owl.video.play.png" />
-    <Content Include="vendor\owl.carousel\owl.carousel.js" />
-    <Content Include="vendor\owl.carousel\owl.carousel.min.js" />
-    <Content Include="vendor\php-email-form\changelog.txt" />
-    <Content Include="vendor\php-email-form\validate.js" />
-    <Content Include="vendor\venobox\venobox.css" />
-    <Content Include="vendor\venobox\venobox.js" />
-    <Content Include="vendor\venobox\venobox.min.css" />
-    <Content Include="vendor\venobox\venobox.min.js" />
-    <Content Include="vendor\waypoints\jquery.waypoints.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -640,28 +580,26 @@
     <Content Include="Views\POIs\Details.cshtml" />
     <Content Include="Views\POIs\Edit.cshtml" />
     <Content Include="Views\POIs\Index.cshtml" />
-    <Content Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
-    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />
-    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css.map" />
-    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
-    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
-    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
-    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
-    <Content Include="vendor\bootstrap\js\bootstrap.js.map" />
-    <Content Include="vendor\bootstrap\js\bootstrap.min.js.map" />
-    <Content Include="vendor\font-awesome\css\font-awesome.css.map" />
-    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="vendor\ionicons\fonts\ionicons.eot" />
-    <Content Include="vendor\ionicons\fonts\ionicons.ttf" />
-    <Content Include="vendor\ionicons\fonts\ionicons.woff" />
-    <Content Include="vendor\jquery\jquery.min.map" />
-    <Content Include="vendor\owl.carousel\LICENSE" />
-    <Content Include="vendor\owl.carousel\README.md" />
+    <Content Include="Views\Supermarkets\Create.cshtml" />
+    <Content Include="Views\Supermarkets\Delete.cshtml" />
+    <Content Include="Views\Supermarkets\Details.cshtml" />
+    <Content Include="Views\Supermarkets\Edit.cshtml" />
+    <Content Include="Views\Supermarkets\Index.cshtml" />
+    <Content Include="Views\ChineseRestaurants\Create.cshtml" />
+    <Content Include="Views\ChineseRestaurants\Delete.cshtml" />
+    <Content Include="Views\ChineseRestaurants\Details.cshtml" />
+    <Content Include="Views\ChineseRestaurants\Edit.cshtml" />
+    <Content Include="Views\ChineseRestaurants\Index.cshtml" />
+    <Content Include="Views\ArtGalleryMuseums\Create.cshtml" />
+    <Content Include="Views\ArtGalleryMuseums\Delete.cshtml" />
+    <Content Include="Views\ArtGalleryMuseums\Details.cshtml" />
+    <Content Include="Views\ArtGalleryMuseums\Edit.cshtml" />
+    <Content Include="Views\ArtGalleryMuseums\Index.cshtml" />
+    <Content Include="Views\PlacesOfWorships\Create.cshtml" />
+    <Content Include="Views\PlacesOfWorships\Delete.cshtml" />
+    <Content Include="Views\PlacesOfWorships\Details.cshtml" />
+    <Content Include="Views\PlacesOfWorships\Edit.cshtml" />
+    <Content Include="Views\PlacesOfWorships\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,7 +1,26 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Points of Interest";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<p>Use this area to provide additional information.</p>
+    <main id="main">
+        <section id="intro">
+            <div class="container">
+                <h1 style="color:white;">Welcome. Come explore this wonderful city with us.</h1><br />
+                <img src="~/Content/Images/great-ocean-road-tour.jpg" alt="" class="img-fluid" width:100% ;height="400">
+            </div>
+        </section>
+        <section id="categories">
+            <h3 style="color:black;">Please select the category below:</h3><br />
+            <div class="container">
+                <img src="~/Content/Images/Supermarkets.jpg" height="200" width="200" />
+                <p>@Html.ActionLink("Supermarkets", "Index", "Supermarkets")</p>
+            </div>
+            <div class="container">
+                <img class="middle-img" src="~/Content/Images/Chinese_Restaurants.jpg"/ height="200" width="200" />
+                <p>@Html.ActionLink("Chinese Restaurants", "Index", "ChineseRestaurants")</p>
+            </div>
+            <div class="container">
+                <img src="~/Content/Images/Museums.jpg" height="200" width="200" />
+                <p>@Html.ActionLink("Museums,Art Galleries and Libraries", "Index", "ArtGalleryMuseums")</p>
+            </div>
+        </section>
+    </main>

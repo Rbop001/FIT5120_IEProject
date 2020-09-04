@@ -1,0 +1,69 @@
+﻿@model IEnumerable<NavigatingMelbourne.Models.ArtGalleryMuseum>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<<main id="main">
+    <section id="about">
+        <div class="container" data-aos="fade-up">
+            <h5>List of the supermarkets in melbourne city</h5>
+            <table class="table">
+                <thead>
+                    <tr>
+
+                        <th>
+                            Theme
+                        </th>
+                        <th>
+                            Sub Theme
+                        </th>
+                        <th>
+                            Name
+                        </th>
+
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Theme)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Sub_Theme)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Feature_Name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("View on the Map", "Details", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @section Scripts {
+
+                @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+                @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+
+                <script>
+                    $(document).ready(function () {
+                        $('.table').DataTable();
+                    });
+                </script>
+
+            }
+            <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+                  rel="stylesheet" />
+
+        </div>
+    </section>
+</main>
+

@@ -1,0 +1,86 @@
+﻿@model NavigatingMelbourne.Models.Supermarket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<main id="main">
+
+    <section id="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-12">
+                    <div id="divMap" style="height: 300px;width: 100%"></div>
+                </div>
+
+            </div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Idesc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Idesc)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Location)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Area)
+                </dd>
+            </dl>
+            <p>
+                @Html.ActionLink("Back", "Index")
+            </p>
+        </div>
+
+
+    </section>
+</main>
+<script type="text/javascript">
+    //(-37.82386264\, 144.9613589)
+        var modelData = @Html.Raw(Json.Encode(Model));
+        var t = modelData.Location;
+        //var temp = t.replace(/[(\\)]/g, '').split(',');
+        var temp = t.replace(/[()]/g, '').split(',');
+        var tmp = temp[0]. replace("\"", '');
+        var marker = { lat: tmp, lng: temp[1] };
+        console.log(marker.lat);
+        console.log(marker.lng);
+        window.onload = function () {
+            var mapOptions = {
+                center: new google.maps.LatLng(marker.lat, marker.lng),
+                zoom: 17,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("divMap"), mapOptions);
+
+            var myLatlng = new google.maps.LatLng(marker.lat, marker.lng);
+                var markerData = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: modelData.Name
+                });
+            //markerData.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+
+        }
+</script>

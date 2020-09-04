@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Rajat Bopardikar\source\repos\NavigatingMelbourne\NavigatingMelbourne\Models\NavigatingMelbourne.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Rajat Bopardikar\source\repos\FIT5120_IEProject\NavigatingMelbourne\Models\NavigatingMelbourne.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<NavigatingMelbourne.Models.ChineseRestaurant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                Street Address
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Area
+            </th>
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.St_Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ind_desc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Small_Area)
+                </td>
+                <td>
+                    @Html.ActionLink("View on the Map", "Details", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+
+    <script>
+                    $(document).ready(function () {
+                        $('.table').DataTable();
+                    });
+    </script>
+
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+      rel="stylesheet" />
+
+
+
+

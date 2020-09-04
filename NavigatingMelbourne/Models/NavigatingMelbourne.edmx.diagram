@@ -4,8 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ab8c0d47fc124476804da1ad2213f26c" Name="Diagram1">
-        <EntityTypeShape EntityType="PointsOfInterestModel.POI" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="ab8c0d47fc124476804da1ad2213f26c" Name="Diagram1" ZoomLevel="10">
+        <EntityTypeShape EntityType="PointsOfInterestModel.POI" Width="1.5" PointX="28.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PointsOfInterestModel.Supermarket" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PointsOfInterestModel.ArtGalleryMuseum" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PointsOfInterestModel.ChineseRestaurant" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PointsOfInterestModel.PlacesOfWorship" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
