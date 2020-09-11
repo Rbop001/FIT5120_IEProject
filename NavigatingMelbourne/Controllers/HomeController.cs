@@ -10,6 +10,10 @@ namespace NavigatingMelbourne.Controllers
     {
         public ActionResult Index()
         {
+            if (Session["user"] == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             return View();
         }
 
@@ -24,6 +28,14 @@ namespace NavigatingMelbourne.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult RoadRules()
+        {
+            return View();
+        }
+        public ActionResult RoadSigns()
+        {
             return View();
         }
     }

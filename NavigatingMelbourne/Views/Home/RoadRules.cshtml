@@ -1,0 +1,119 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RoadRules</title>
+    <link type="text/css" href="~/assets/css/StyleSheet1.css" rel="stylesheet" />
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: blue;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: #111;
+                }
+
+        .active {
+            background-color: #4CAF50;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+
+    <ul>
+        <li><a href="#home">Road Signs</a></li>
+        <li><a href="#news">Pedestrian Signs</a></li>
+        <li><a href="#contact">Traffic Rules</a></li>
+    </ul>
+
+    <br />
+    <div class="slide-container">
+        <span id="slider-image-1"></span>
+        <span id="slider-image-2"></span>
+        <span id="slider-image-3"></span>
+        <div class="image-container">
+            <img src="~/Content/Images/road_signs.jpg" class="slider-image" />
+            <img src="~/Content/Images/hook_turn_new.jpg" class="slider-image" />
+            <img src="~/Content/Images/pedestrian_signs.jpg" class="slider-image" />
+        </div>
+        <div class="button-container">
+            <a href="#slider-image-1" class="slider-button"></a>
+            <a href="#slider-image-2" class="slider-button"></a>
+            <a href="#slider-image-3" class="slider-button"></a>
+        </div>
+    </div>
+    <!-- End CSS Slider BODY section -->
+    <div class="about-container">
+        <h1>General road and traffic rules information to ensure you have a hassle-free and safe trip.</h1>
+    </div>
+
+  
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h3>Navigating Melbourne</h3>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="/Home/Index">Home</a></li>
+                            <li><a href="/Home/About">Explore Melbourne</a></li>
+                            @*<li><a href="#">Services</a></li>
+                                <li><a href="#">Terms of service</a></li>
+                                <li><a href="#">Privacy policy</a></li>*@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong>The Optimisers</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+                -->
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+</body>
+</html>
